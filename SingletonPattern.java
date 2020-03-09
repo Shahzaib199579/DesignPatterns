@@ -2,13 +2,13 @@ public class SingletonPattern
 {
     public static void main(String[] args) {
         
-        SingletonDatabase database = new SingletonDatabase("Employee");
+        SingletonDatabase database;
 
-        database = database.getInstance("Employee");
+        database = SingletonDatabase.getInstance("Employee");
 
         System.out.println("Hello from " + database.getName());
 
-        database = database.getInstance("Product");
+        database = SingletonDatabase.getInstance("Product");
 
         System.out.println("Hello from " + database.getName());
     }
