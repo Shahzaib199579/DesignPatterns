@@ -1,4 +1,6 @@
-public class VP
+import java.util.Iterator;
+
+public class VP extends Corporate
 {
     public String name;
     public String division;
@@ -16,5 +18,10 @@ public class VP
     public void print()
     {
         System.out.println("Name: "+ name + " Division: "+ division);
+    }
+
+    public Iterator iterator()
+    {
+        return new VPIterator(this);
     }
 }

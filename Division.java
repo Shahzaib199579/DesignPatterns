@@ -1,7 +1,9 @@
-public class Division
+import javax.swing.text.html.HTMLDocument.Iterator;
+
+public class Division extends Corporate
 {
     private String name;
-    private VP[] vPs = new VP[100];
+    private Corporate[] corporate = new Corporate[100];
     private int number = 0;
 
     public Division(String n)
@@ -14,14 +16,24 @@ public class Division
         return name;
     }
 
-    public void add(String n)
+    public void add(Corporate c)
     {
-        VP vp = new VP(n, name);
-        vPs[number++] = vp;
+        corporate[number++] = c;
     }
 
     public DivisionIterator iterator()
     {
-        return new DivisionIterator(vPs);
+        return new DivisionIterator(corporate);
+    }
+
+    public void print()
+    {
+        java.util.Iterator i = iterator();
+
+        while(i.hasNext())
+        {
+            Corporate c = (Corporate) i.next();
+            c.print();
+        }
     }
 }

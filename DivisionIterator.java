@@ -2,24 +2,24 @@ import java.util.Iterator;
 
 public class DivisionIterator implements Iterator
 {
-    private VP[] vps;
+    private Corporate[] corporate;
     private int location = 0;
 
-    public DivisionIterator(VP[] v) {
-        vps = v;
+    public DivisionIterator(Corporate[] c) {
+        corporate = c;
     }
 
     @Override
     public boolean hasNext() {
-        if (location < vps.length && vps[location] != null)
+        if (location < corporate.length && corporate[location] != null)
             return true;
         else
             return false;
     }
 
     @Override
-    public VP next() {
-        return vps[location++];
+    public Corporate next() {
+        return corporate[location++];
     }
     
 }
