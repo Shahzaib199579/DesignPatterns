@@ -26,9 +26,7 @@ public class Purchase
         {
             System.out.println("Thank you for purchasing.");
         }
-        else
-        {
-            mediator.handle("purchase.exit");
-        }
+        
+        mediator.handle("purchase.exit");
     }
 }
